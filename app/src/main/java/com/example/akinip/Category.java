@@ -40,7 +40,7 @@ import retrofit2.Retrofit;
 
 public class Category extends AppCompatActivity {
     Boolean installedData;
-    private final  String initialLink = "http://redson.xyz:3800/turgutluhlkegt/K56DwQmRLU/2";
+    //private final  String initialLink = "http://redson.xyz:3800/turgutluhlkegt/K56DwQmRLU/2";
     private FilmAdapter filmAdapter;
     RecyclerView recyclerView;
     private Retrofit client;
@@ -66,6 +66,8 @@ public class Category extends AppCompatActivity {
     EditText etSearch;
     Bundle bundle;
     int fragmentAdded;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,7 +115,7 @@ public class Category extends AppCompatActivity {
         }
 
         fragmetCategory = new FragmentCategory();
-
+        Toast.makeText(Category.this, String.valueOf(dataList.getChannelName().size()), Toast.LENGTH_LONG).show();
 
 
 

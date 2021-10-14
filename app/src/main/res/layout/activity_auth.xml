@@ -11,7 +11,7 @@
         android:id="@+id/ivAuth"
         android:layout_width="306dp"
         android:layout_height="312dp"
-        app:srcCompat="@drawable/iptv" />
+        app:srcCompat="@drawable/bir_balk_ekleyin" />
 
     <TextView
         android:id="@+id/tvAuth"
@@ -28,7 +28,10 @@
         android:layout_width="306dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvAuth"
-
+        android:maxLines="1"
+        android:lines="1"
+        android:singleLine="true"
+        android:allowUndo="false"
         android:hint="Enter Link" />
     <LinearLayout
         android:id="@+id/linerAuth"

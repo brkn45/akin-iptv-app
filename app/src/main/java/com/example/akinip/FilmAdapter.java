@@ -71,7 +71,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmHolder> {
     public void onBindViewHolder(@NonNull FilmHolder holder, @SuppressLint("RecyclerView") int position) {
 
         try {
-            holder.setData(filmName.get(position),filmImage.get(position));
+            holder.setData(filmName.get(position));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -113,7 +113,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.FilmHolder> {
 
 
         }
-        public void setData(String name, String image) throws IOException {
+        public void setData(String name) throws IOException {
             tvFilmName.setText(name);
 
             ivFilm.setImageResource(android.R.drawable.btn_star_big_on);

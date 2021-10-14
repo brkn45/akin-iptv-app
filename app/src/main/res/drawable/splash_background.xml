@@ -4,6 +4,6 @@
         android:drawable="@drawable/bg_gradient"/>
     <item>
         <bitmap android:gravity="center"
-            android:src="@drawable/iptv"/>
+            android:src="@drawable/bir_balk_ekleyin"/>
     </item>
 </layer-list>

@@ -20,7 +20,7 @@
             android:layout_height="50dp"
 
 
-            app:srcCompat="@drawable/iptv" />
+            app:srcCompat="@drawable/bir_balk_ekleyin" />
 
         <EditText
             android:id="@+id/etsearch"
@@ -115,6 +115,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/relativeVideoView"
-        android:layout_alignParentBottom="true"
-        />
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>
