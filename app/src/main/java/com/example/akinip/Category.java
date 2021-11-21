@@ -115,7 +115,11 @@ public class Category extends AppCompatActivity {
         }
 
         fragmetCategory = new FragmentCategory();
-        Toast.makeText(Category.this, String.valueOf(dataList.getChannelName().size()), Toast.LENGTH_LONG).show();
+        if(dataList != null){
+            Toast.makeText(Category.this, String.valueOf(dataList.getChannelName().size()), Toast.LENGTH_LONG).show();
+        }
+
+        fragmentExit = new FragmentExit();
 
 
 
@@ -183,7 +187,6 @@ public class Category extends AppCompatActivity {
         lvFrag = (ListView) findViewById(R.id.lvFrag);
         etSearch = (EditText) findViewById(R.id.etsearch);
         sp = this.getPreferences(Context.MODE_PRIVATE);
-
 
         if(sp.contains("installedData") && sp.contains("dataList")){
             installedData = true;
@@ -302,7 +305,7 @@ public class Category extends AppCompatActivity {
         if(!word.isEmpty()){
             int i=0;
             for(i=0; i <dataList.getChannelName().size();i++){
-                if(dataList.getChannelName().get(i).toLowerCase().indexOf(word.toLowerCase()) >0){
+                if(dataList.getChannelName().get(i).toLowerCase().indexOf(word.toLowerCase()) >-1){
                     sameWord.add(dataList.getChannelName().get(i));
                     sameLink.add(dataList.getLink().get(i));
                 }
@@ -318,12 +321,24 @@ public class Category extends AppCompatActivity {
         }
     }
     public void funExit(View view){
-         fragmentExit = new FragmentExit();
         exitManager = getFragmentManager();
         ftExit = exitManager.beginTransaction();
-        ftExit.add(R.id.parentLayout, fragmentExit, "fragmentExit");
-        ftExit.addToBackStack("exit1");
-        ftExit.commit();
+
+        if(!fragmentExit.isAdded()) {
+            ftExit.add(R.id.parentLayout, fragmentExit, "fragmentExit");
+            ftExit.addToBackStack("exit1");
+            ftExit.commit();
+        }
+        else{
+            ftExit.remove(fragmentExit);
+            exitManager.popBackStack();
+            ftExit.commit();
+
+        }
+
+
+
+
     }
     public void funCategory(View view){
 
@@ -356,15 +371,28 @@ public class Category extends AppCompatActivity {
         }
     }
     public void noFun(View view){
-        ftExit.detach(fragmentExit);
-        exitManager.popBackStack();
+        exitManager = getFragmentManager();
+        ftExit = exitManager.beginTransaction();
+        if(fragmentExit.isAdded()) {
+            ftExit.remove(fragmentExit);
+            exitManager.popBackStack();
+            ftExit.commit();
+        }
+
     }
 
     public void yesFun(View view){
+        exitManager = getFragmentManager();
+        ftExit = exitManager.beginTransaction();
+        if(dataList !=null){
+            dataList.clearData();
+        }
 
-
-
-
+        ftExit.remove(fragmentExit);
+        ftExit.commit();
+        edt = sp.edit();
+        edt.clear();
+        edt.commit();
         Intent intent = new Intent(Category.this,Auth.class);
         intent.putExtra("exit",true);
         startActivity(intent);
@@ -399,8 +427,11 @@ public class Category extends AppCompatActivity {
 
         @Override
         public void run() {
-            videoView.setVideoPath(dataList.getLink().get(1));
-            videoView.start();
+            if(dataList!=null){
+                videoView.setVideoPath(dataList.getLink().get(0));
+                videoView.start();
+            }
+
 
         }
 

@@ -104,7 +104,7 @@
         <VideoView
             android:id="@+id/videoViewCategory"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="275dp"
 
             android:layout_centerHorizontal="true" />
     </RelativeLayout>

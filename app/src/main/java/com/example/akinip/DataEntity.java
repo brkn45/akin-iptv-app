@@ -60,4 +60,12 @@ public class DataEntity implements Serializable {
     public void setLink(ArrayList<String> link) {
         this.link = link;
     }
+
+    public void clearData(){
+        pictureLink.clear();
+        channelName.clear();
+        groupName.clear();
+        link.clear();
+
+    }
 }

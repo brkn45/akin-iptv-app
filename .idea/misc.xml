@@ -8,7 +8,7 @@
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.1140625" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_category.xml" value="0.15730337078651685" />
+        <entry key="app/src/main/res/layout/activity_category.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/category_item.xml" value="0.1" />

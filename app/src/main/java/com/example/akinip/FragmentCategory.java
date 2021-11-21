@@ -53,12 +53,15 @@ public class FragmentCategory extends Fragment {
                 //System.out.println("txt" +txtName);
 
                 //System.out.println("filmName: "+category.get(0));
-                for(int i=0;i<filmArr.size();i++){
-                    if(category.get(i).compareTo(txtName)==0){
-                        //System.out.println("girdi");
-                        filmName.add(filmArr.get(i));
-                        link.add(linkArr.get(i));
+                for(int i=0;i<filmArr.size() && i<category.size() && i<linkArr.size();i++){
+
+                        if(category.get(i).compareTo(txtName)==0){
+                            //System.out.println("girdi");
+                            filmName.add(filmArr.get(i));
+                            link.add(linkArr.get(i));
+
                     }
+
                 }
                 //System.out.println("filmName: "+filmName.get(0));
                 filmAdapter.setFilmName(filmName);
