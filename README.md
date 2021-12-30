@@ -10,4 +10,7 @@
 ## APK File
 Apk file is in apk diroctory
  ## Backend Link
+testlink1: https://iptv-org.github.io/iptv/index.category.m3u
+testlink2: https://iptv-org.github.io/iptv/index.language.m3u
+ ## Backend Link
  > https://github.com/brkn45/iptvApi
