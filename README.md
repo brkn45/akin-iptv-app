@@ -14,3 +14,5 @@ testlink1: https://iptv-org.github.io/iptv/index.category.m3u
 testlink2: https://iptv-org.github.io/iptv/index.language.m3u
  ## Backend Link
  > https://github.com/brkn45/iptvApi
+ ## Google Play Store Link
+ > https://play.google.com/store/apps/details?id=com.akiniptv
